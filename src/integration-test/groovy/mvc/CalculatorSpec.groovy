@@ -1,7 +1,7 @@
 package mvc
 
 import geb.spock.GebSpec
-import grails.test.mixin.integration.Integration
+import grails.testing.mixin.integration.Integration
 
 /**
  * See http://www.gebish.org/manual/current/ for more instructions
