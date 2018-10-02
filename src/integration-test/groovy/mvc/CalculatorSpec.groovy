@@ -9,26 +9,26 @@ import grails.testing.mixin.integration.Integration
 @Integration
 class CalculatorSpec extends GebSpec {
 
-
+    // Defines a when-then workflow
     void "Basic calculation"() {
         when:
-            go '/static/GradeCalculator.html'
+        go '/static/GradeCalculator.html'
         then:
-        	title == "Grade Calculator"
+        title == "Grade Calculator"
 
         when: "set valid input"
-            $("form").en   = 5.0
-            $("form").exam = 6.0
-            $("input", type: "submit").click()
+        $("form").en = 5.0
+        $("form").exam = 6.0
+        $("input", type: "submit").click()
 
         then: "Result Page is displayed"
-            title == "Average"
-//            $("output").text() == "5.5"
+        title == "Average"
+        $("output").text() == "placeholder goes here"
 
 
         when: "click on back link"
-            $("a", text: "calculator").click()
+        $("a", text: "calculator").click()
         then:
-            title == "Grade Calculator"
+        title == "Grade Calculator"
     }
 }
