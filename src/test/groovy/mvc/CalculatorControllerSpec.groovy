@@ -9,6 +9,14 @@ import spock.lang.Specification
  */
 class CalculatorControllerSpec extends Specification implements ControllerUnitTest<CalculatorController> {
 
+    void "simple average of #en and #exam should be #result"() {
+        when:
+        controller.calc(1.0, 2.0)
+        then:
+        model.result == 1.5
+    }
+
+    // Data driven testing
     void "average of #en and #exam should be #result"(en, exam, result) {
         when:
         controller.calc(en, exam)
