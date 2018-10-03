@@ -10,15 +10,15 @@ class InPlaceCalculatorControllerSpec extends Specification implements Controlle
 
     void "average of #en and #exam should be #result"(en, exam, result) {
         when:
-            def model = new CalculatorModel(en:en, exam:exam)
-            controller.calc(model)
+        def model = new CalculatorModel(en: en, exam: exam)
+        controller.calc(model)
         then: "average calculation"
-            model.result == result
+        model.result == result
         where:
-            en  | exam | result
-            0.0 | 0.0  | "Cannot calculate. Exam value was invalid."
-            1.0 | 2.0  | "2"
-            2.0 | 1.0  | "2"
-            1.0 | 1.9  | "1"
+        en  | exam | result
+        0.0 | 0.0  | "Cannot calculate. Exam value was invalid."
+        1.0 | 2.0  | "2"
+        2.0 | 1.0  | "2"
+        1.0 | 1.9  | "1"
     }
 }
