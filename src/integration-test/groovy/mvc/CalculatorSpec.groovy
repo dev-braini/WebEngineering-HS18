@@ -10,6 +10,7 @@ import grails.testing.mixin.integration.Integration
 class CalculatorSpec extends GebSpec {
 
     // Defines a when-then workflow
+    // check page title
     void "Basic calculation"() {
         when:
         go '/static/GradeCalculator.html'
